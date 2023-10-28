@@ -16,7 +16,7 @@ func main() {
 	r := chi.NewRouter()
 	r.Use(middleware.Logger)
 
-	_, err := database.GetPostgresDB("user=postgres password=password01 dbname=example sslmode=disable")
+	_, err := database.GetPostgresDB("user=postgres password=secret dbname=example sslmode=disable")
 	if err != nil {
 		log.Fatalf("error on connecting to database: %v", err)
 	}
